@@ -1,0 +1,64 @@
+vse: &vse
+  docker:
+    - image: circleci/node:8.11.3
+
+version: 2.1
+jobs:
+  build:
+    <<: *vse
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run test
+      - run: npm run build
+      - persist_to_workspace:
+         root: .
+         paths:
+            - .
+  deploy:
+    <<: *vse
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run:
+          name: Installing dependencies
+          command: |
+
+             sudo apt update
+             sudo apt-get install python-pip
+             sudo pip install --upgrade pip && pip install --upgrade setuptools
+             sudo pip install ansible boto boto3
+             sudo pip install cryptography
+
+      - run:
+          name: Ansible test
+          command: |
+            ansible --version
+
+#      - run:
+#          name: Let´s go AWS!
+#          command: |
+#            cd ./ansible && ansible-playbook
+
+      - run:
+          name: Ansible deploy
+          command: |
+            export AWS_ACCESS_KEY_ID="$keyId"
+            export AWS_SECRET_ACCESS_KEY="$keySecret"
+            export AWS_SECURITY_TOKEN="$keyToken"
+            ansible-playbook ./ansible/ec2_deploy.yml --user ubuntu --ssh-common-args='-o StrictHostKeyChecking=no'
+
+
+workflows:
+  version: 2.1
+  execute:
+      jobs:
+        - build
+        - deploy:
+            requires:
+              - build
+            filters:
+              branches:
+                only: release
+
