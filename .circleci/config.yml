@@ -26,6 +26,7 @@ jobs:
           command: |
 
              sudo apt update
+             sudo pip3 install pygame
              sudo apt-get install python-pip
              sudo pip install --upgrade pip && pip install --upgrade setuptools
              sudo pip install ansible boto boto3
