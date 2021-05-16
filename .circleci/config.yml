@@ -61,5 +61,5 @@ workflows:
               - build
             filters:
               branches:
-                only: Main
+                only: main
 
