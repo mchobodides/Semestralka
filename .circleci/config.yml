@@ -27,7 +27,6 @@ jobs:
 
              sudo apt-get update
              sudo apt install python-pip
-             sudo pip –-version
              sudo pip install -r requirements.txt
              sudo pip install --upgrade pip
              sudo apt install python-setuptools
