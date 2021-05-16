@@ -25,8 +25,9 @@ jobs:
           name: Installing dependencies
           command: |
 
+             sudo add-apt-repository universe
              sudo apt-get update
-             sudo apt-get install -y python3-pip
+             sudo apt-get install python3-pip
              sudo pip install ansible boto boto3
              sudo pip install cryptography
 
