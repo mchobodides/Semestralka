@@ -26,8 +26,8 @@ jobs:
           command: |
 
              sudo apt update
-             sudo apt-get install python-pip
-             sudo pip install typing
+             sudo apt install python-pip
+             sudo apt install python-typing
              sudo pip install --upgrade pip && pip install --upgrade setuptools
              sudo pip install ansible boto boto3
              sudo pip install cryptography
@@ -38,7 +38,7 @@ jobs:
             ansible --version
 
 #      - run:
-#          name: Let´s go AWS!
+#          name: Let´s go AWS
 #          command: |
 #            cd ./ansible && ansible-playbook
 
@@ -61,5 +61,5 @@ workflows:
               - build
             filters:
               branches:
-                only: Release
+                only: Main
 
