@@ -26,8 +26,7 @@ jobs:
           command: |
 
              sudo apt update
-             sudo apt install python-pip
-             sudo apt install python-typing
+             sudo apt-get install python3-pip
              sudo pip install --upgrade pip && pip install --upgrade setuptools
              sudo pip install ansible boto boto3
              sudo pip install cryptography
