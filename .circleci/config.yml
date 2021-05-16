@@ -26,7 +26,7 @@ jobs:
           command: |
 
              sudo apt-get update
-             sudo apt-get install python-pip
+             sudo apt-get install python3-pip
              sudo pip install ansible boto boto3
              sudo pip install cryptography
 
