@@ -28,6 +28,8 @@ jobs:
       - run:
           name: Installing dependencies
           command: |
+             sudo apt-get install python-pip
+             sudo pip install --upgrade pip && pip install --upgrade setuptools
              sudo pip install boto boto3
 
       - run:
