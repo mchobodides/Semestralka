@@ -43,9 +43,9 @@ jobs:
       - run:
           name: Ansible deploy
           command: |
-            export AWS_ACCESS_KEY_ID="$keyId"
-            export AWS_SECRET_ACCESS_KEY="$keySecret"
-            export AWS_SECURITY_TOKEN="$keyToken"
+            AWS_ACCESS_KEY_ID="ASIASIRJ3ZBCL7CFNGWC"
+            AWS_SECRET_ACCESS_KEY="4kNTnTgMMAp/XKiaTXDJTDfakgflP0S04LzKVvCT"
+            AWS_SECURITY_TOKEN="IQoJb3JpZ2luX2VjELT//////////wEaCXVzLXdlc3QtMiJGMEQCIED6BoVyGDHeiDPT8hqs6E50u9K+UPt33wqOIU9b/pp9AiBNEhWW9f8Fm/bM5D6q3TphxhVhXdcD+s0wZEDwJdZj+iqyAghNEAAaDDE1NTc4MDM2ODQ1MiIMNhnryTAZp0R2jXOHKo8ClwSUVIiNFicHkHCw1dOybSPowk+bShEz4jw4e8VTgs3ztGSsuSBN5UIpAKFbbWRuTfODW0xaDCBQtKOAMvWaJfkCFH2W7NuLA3omRUj7+Hqb61oLSCUbfZkxER5a6QcDMGGDd5wzggXMDnkczus6u+Uc3VnIwIIMfa4axqrZpgGrIJ7mhKuag27GQxqxY52DIByijDYfSNKhgl2q5GnP4iScX2rnrHlQiA+DYct0kBAn0IV5NPg3v7sO8mnGMhiIqV+BgIGA6mqzorRrRlHN+h4ppyYFbNY3IBADcJpY/2L1exnmAs+vpBoYHtqNC2tPnQl6nueDuYhjjY57CZRweEyhBBePrvp7rJgy7gpCxDC/jIuFBjqeAS4UE9B9QpJyt9q5TarZYK19lxHObmJBu/o55P+P+al9jCGLFybBkCbjRXitBUJmInD2ZswGdLGB5gZFSK9xrlP1ApwYW4B1BffkysDFC3HltHKDgY5NGEbvy1joqOwz13edR57/Oms6omVtveFtri3g3sOtyV2/m1wXScelSW7m3IBI8u+sZe2dqLwy+2J39fobpgGovxG9intiX1Nq"
             ansible-playbook ./ansible/ec2_deploy.yml --user ubuntu --ssh-common-args='-o StrictHostKeyChecking=no'
 
 
