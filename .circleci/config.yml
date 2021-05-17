@@ -15,21 +15,15 @@ jobs:
          root: .
          paths:
             - .
+vse: &vsedep
+  docker:
+    - image: ansible/ansible-runner
+
   deploy:
-    <<: *vse
+    <<: *vsedep
     steps:
       - attach_workspace:
           at: .
-
-      - run:
-          name: Installing dependencies
-          command: |
-
-             sudo apt-get update
-             sudo python get-pip.py
-             sudo python -m pip install ansible
-             sudo python -m pip install boto3
-             sudo pip install boto
 
       - run:
           name: Ansible test
