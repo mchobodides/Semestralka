@@ -30,18 +30,18 @@ jobs:
           command: |
             ansible --version
 
-#      - run:
-#          name: Let´s go AWS
-#          command: |
-#            cd ./ansible && ansible-playbook
+      - run:
+          name: Let´s go AWS
+          command: |
+            cd ./ansible && ansible-playbook
 
-#      - run:
-#          name: Ansible deploy
-#          command: |
-#            export AWS_ACCESS_KEY_ID="$keyId"
-#            export AWS_SECRET_ACCESS_KEY="$keySecret"
-#            export AWS_SECURITY_TOKEN="$keyToken"
-#            ansible-playbook ./ansible/ec2_deploy.yml --user ubuntu --ssh-common-args='-o StrictHostKeyChecking=no'
+      - run:
+          name: Ansible deploy
+          command: |
+            export AWS_ACCESS_KEY_ID="$keyId"
+            export AWS_SECRET_ACCESS_KEY="$keySecret"
+            export AWS_SECURITY_TOKEN="$keyToken"
+            ansible-playbook ./ansible/ec2_deploy.yml --user ubuntu --ssh-common-args='-o StrictHostKeyChecking=no'
 
 
 workflows:
