@@ -26,6 +26,8 @@ jobs:
           command: |
 
              sudo apt-get update
+             curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+             python get-pip.py --user
              sudo python get-pip.py
              sudo python -m pip install ansible
              sudo python -m pip install boto3
