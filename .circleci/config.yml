@@ -26,6 +26,11 @@ jobs:
           at: .
 
       - run:
+          name: Installing dependencies
+          command: |
+             sudo pip install boto boto3
+
+      - run:
           name: Ansible test
           command: |
             ansible --version
