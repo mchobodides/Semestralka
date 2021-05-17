@@ -1,6 +1,10 @@
 vse: &vse
   docker:
     - image: circleci/node:8.11.3
+    
+vsedep: &vsedep
+  docker:
+    - image: ansible/ansible-runner
 
 version: 2.1
 jobs:
@@ -15,11 +19,6 @@ jobs:
          root: .
          paths:
             - .
-vsedep: &vsedep
-  docker:
-    - image: ansible/ansible-runner
-
-jobs:
   deploy:
     <<: *vsedep
     steps:
