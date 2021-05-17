@@ -30,10 +30,10 @@ jobs:
           command: |
             ansible --version
 
-      - run:
-          name: Let´s go AWS
-          command: |
-            cd ./ansible && ansible-playbook
+#      - run:
+#          name: Let´s go AWS
+#          command: |
+#            cd ./ansible && ansible-playbook
 
       - run:
           name: Ansible deploy
