@@ -31,8 +31,8 @@ jobs:
              sudo pip install --upgrade pip
              sudo pip uninstall setuptools
              sudo pip install setuptools
-#             sudo apt-get install python-setuptools
-             sudo python setup.py install
+             sudo apt-get install python-setuptools
+#             sudo python setup.py install
              sudo pip install ansible boto boto3
              sudo pip install cryptography
 
