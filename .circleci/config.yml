@@ -15,7 +15,7 @@ jobs:
          root: .
          paths:
             - .
-vse: &vsedep
+vsedep: &vsedep
   docker:
     - image: ansible/ansible-runner
 
