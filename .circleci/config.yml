@@ -29,7 +29,8 @@ jobs:
              sudo apt install python-pip
              sudo pip install typing
              sudo pip install --upgrade pip
-             sudo python -m pip install -U pip
+             sudo pip uninstall setuptools
+             sudo pip install setuptools
              sudo apt install python-setuptools
              sudo pip install ansible boto boto3
              sudo pip install cryptography
