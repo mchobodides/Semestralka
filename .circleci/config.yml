@@ -24,11 +24,13 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+
       - run:
           name: Installing dependencies
           command: |
              sudo apt update
              sudo pip install ansible boto boto3
+
       - run:
           name: Ansible test
           command: |
