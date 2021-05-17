@@ -19,7 +19,6 @@ vsedep: &vsedep
   docker:
     - image: ansible/ansible-runner
 
-version: 2.2
 jobs:
   deploy:
     <<: *vsedep
