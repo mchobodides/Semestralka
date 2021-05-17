@@ -4,7 +4,7 @@ vse: &vse
     
 vsedep: &vsedep
   docker:
-    - image: cytopia/ansible
+    - image: cytopia/ansible:2.8-aws
 
 version: 2.1
 jobs:
