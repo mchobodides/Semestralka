@@ -28,7 +28,7 @@ jobs:
           name: Installing dependencies
           command: |
              sudo apt update
-             sudo pip install boto boto3
+             sudo pip install ansible boto boto3
       - run:
           name: Ansible test
           command: |
