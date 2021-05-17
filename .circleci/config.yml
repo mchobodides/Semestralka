@@ -27,6 +27,7 @@ jobs:
 
              sudo apt-get update
              sudo apt-get install python-pip
+             sudo pip install --upgrade pip
              sudo pip install typing
              sudo pip uninstall setuptools
              sudo pip install setuptools
