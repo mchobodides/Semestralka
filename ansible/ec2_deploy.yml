@@ -14,7 +14,7 @@
         assign_public_ip: yes
         wait: yes
         count: 1
-        group: securitygroup
+        group: eshop
       register: ec2
 
     - name: Join instance to group
