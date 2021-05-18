@@ -1,4 +1,13 @@
+vse: &vse
+  docker:
+    - image: circleci/node:8.11.3
+    
+vsedep: &vsedep
+  docker:
+    - image: ansible/ansible:ubuntu1604
 
+version: 2.1
+jobs:
   build:
     <<: *vse
     steps:
