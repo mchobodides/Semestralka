@@ -13,7 +13,7 @@
 #        vpc_subnet_id: subnet-8576f9a4
         assign_public_ip: yes
         wait: yes
-        count: 1
+        count: 2
         group: eshop
       register: ec2
 
