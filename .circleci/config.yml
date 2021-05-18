@@ -1,6 +1,10 @@
 vse: &vse
   docker:
     - image: circleci/node:8.11.3
+    
+vsedep: &vsedep
+  docker:
+    - image: ansible/ansible:ubuntu1604
 
 version: 2.1
 jobs:
@@ -16,7 +20,7 @@ jobs:
          paths:
             - .
   deploy:
-    <<: *vse
+    <<: *vsedep
     steps:
       - attach_workspace:
           at: .
@@ -24,13 +28,7 @@ jobs:
       - run:
           name: Installing dependencies
           command: |
-
-             sudo apt update
-             sudo apt-get install python3-pip
-             sudo pip3 install --upgrade pip
-             sudo pip3 install --upgrade setuptools
-             sudo pip3 install ansible boto boto3
-             sudo pip3 install cryptography
+             sudo pip install ansible boto boto3
 
       - run:
           name: Ansible test
